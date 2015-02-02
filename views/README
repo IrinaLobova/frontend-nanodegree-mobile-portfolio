@@ -1,0 +1,14 @@
+1. Mobile speedpage is 97, and desktop one is 98. To achieve these results I:
+-	minified CSS
+-	inlined CSS
+-	minified JS
+-	inlined JS
+-	unblocked all critical resources
+-	optimized pictures
+-	optimized media prints
+-	altered font style (moved it to CSS)
+
+2. To make FPS be 60 or higher I:
+- moved weighty computations outside of the for loop
+- limited the number of pizzas; instead of 200 pizzas the number is limited by the screen parameters. 
+Average time to generate last 10 frames is less than 0.5 ms now.
