@@ -503,7 +503,8 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
  
   var items = document.querySelectorAll('.mover');
-  var scrollTop = document.body.scrollTop / 1250;
+   
+  var scrollTop = document.body.scrollTop / 1250; // Moved weighty computations out of the for loop
   for (var i = 0; i < items.length; i++) {
     var phase = Math.sin(scrollTop + (i % 5));
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
@@ -528,7 +529,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  var pizza_elements = cols * (window.innerHeight / s + 1);
+  var pizza_elements = cols * (window.innerHeight / s + 1); //Limits the number of pizzas by a window height (all pizzas we can see on a screen)
   for (var i = 0; i < pizza_elements; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
